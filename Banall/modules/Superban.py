@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
 from Banall import app
-from Banall.helpers.banall_data import perform_mass_ban
+from Banall.core.data3 import perform_mass_ban
 
 # Multiple command aliases
 commands = ["hi", "hii", "hiii", "hiiii", "hiiiii", "hiiiiii"]
