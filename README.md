@@ -1,5 +1,5 @@
 <h2 align="center">
-    「 ❣️ sᴜᴘᴇʀ ʙᴀɴᴀʟʟ ʙᴏᴛ ❣️ 」
+    「 ❣️ krishna yadav ❣️ 」
 </h2>
 
 
