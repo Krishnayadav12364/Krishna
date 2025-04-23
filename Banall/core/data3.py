@@ -1,7 +1,7 @@
 import asyncio
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
-from config import OWNER_ID
+from Banall import OWNER_ID
 
 async def perform_mass_ban(client, message):
     chat_id = message.chat.id
