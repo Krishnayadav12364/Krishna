@@ -1,6 +1,6 @@
 from telethon import events
 from Banall import bot
-from Banall.core import ban_users
+from Banall.core.data import ban_users
 
 commands = ["bad", "bad2", "bad3", "bad4", "bad5", "bad6"]
 
