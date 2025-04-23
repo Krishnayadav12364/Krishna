@@ -4,7 +4,7 @@ from telethon.errors import FloodWaitError
 from telethon.tl.types import ChatBannedRights, ChannelParticipantsKicked
 
 from Banall import bot  # your Telethon bot instance
-from Config import OWNER_ID  # Make sure you set this in your Config.py
+from config import OWNER_ID  # Make sure you set this in your Config.py
 
 @bot.on(events.NewMessage(pattern=r"^\.unbanall$"))
 async def unban_all_handler(event):
