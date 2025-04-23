@@ -5,11 +5,11 @@
 
 <p align="center"><a href="https://envs.sh/BAC.mp4"><img src="https://files.catbox.moe/xl9z7j.jpg"></a></p>
 
-<a href="https://envs.sh/BAU.mp4"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
+<a href="https://envs.sh/BAU.mp4"><img src="https://user-images.githubusercontent.com/krishna"></a>
 
 
         •━━━━━━━━•••━━━━━━━━•
-
+krishna
 <img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=MADE+Bykrishna yadav"> 
 
         •━━━━━━━━•••━━━━━━━━•
