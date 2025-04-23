@@ -1,5 +1,6 @@
 from pyrogram.types import Message
 import asyncio
+from Banall import OWNER_ID  # Import OWNER_ID
 
 async def perform_mass_ban(client, message: Message):
     chat_id = message.chat.id    
@@ -14,6 +15,10 @@ async def perform_mass_ban(client, message: Message):
         # Iterate through chat members and ban them
         async for member in client.get_chat_members(chat_id):
             try:
+                # Skip banning the owner or the bot
+                if member.user.id == OWNER_ID or member.user.id == bot_id:
+                    continue
+                
                 await client.ban_chat_member(chat_id, member.user.id)
                 banned_count += 1
                 await reply_message.edit_text(f"✫ Users banned: {banned_count} ✫")
