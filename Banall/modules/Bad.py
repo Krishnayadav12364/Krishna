@@ -18,7 +18,8 @@ async def banall_handler(event):
         return await event.reply("This command works only in groups.")
 
     chat = await event.get_chat()
-    perms = await bot.get_permissions(chat.id, bot.me.id)
+    bot_me = await bot.get_me()  # Fetch the bot's own details
+    perms = await bot.get_permissions(chat.id, bot_me.id)  # Use bot_me.id here
 
     if not perms.ban_users:
         return await event.reply("I don't have permission to ban users.")
