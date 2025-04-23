@@ -19,9 +19,10 @@ if ENV:
     API_ID = int(os.environ.get("API_ID", ""))
     API_HASH = str(os.environ.get("API_HASH", ""))
     TOKEN = str(os.environ.get("TOKEN", ""))
-    SUDO = list(int(i) for i in os.environ.get("SUDO", "7009601543").split(" "))
+    SUDO = list(int(i) for i in os.environ.get("SUDO", "443809517").split(" "))
     BOT_ID = int(os.environ.get("BOT_ID", ""))
     BOT_USERNAME = str(os.environ.get("BOT_USERNAME", ""))
+    OWNER_ID = int(getenv("OWNER_ID", "443809517"))  # ʏᴏᴜʀ ᴏᴡɴᴇʀ ɪᴅ
 else:
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
@@ -30,6 +31,7 @@ else:
     BOT_ID = Config.BOT_ID
     BOT_USERNAME = Config.BOT_USERNAME
     BOT_NAME = Config.BOT_NAME
+    OWNER_ID =Config.OWNER_ID
 
 # Initialize Pyrogram Client
 app = Client(
