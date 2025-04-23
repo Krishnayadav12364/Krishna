@@ -1,6 +1,7 @@
 import asyncio
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
+from config import OWNER_ID
 
 ban_rights = ChatBannedRights(
     until_date=None,
@@ -18,7 +19,6 @@ async def ban_users(bot, event, command_name, batch_size=20, flood_threshold=30)
     if not perms.ban_users:
         return await event.reply("I don't have permission to ban users.")
 
-    msg = await event.reply(f"{command_name.capitalize()} in progress...")
     banned, failed = 0, 0
     users_to_ban = []
 
@@ -46,9 +46,15 @@ async def ban_users(bot, event, command_name, batch_size=20, flood_threshold=30)
         await asyncio.gather(*(ban_user(uid) for uid in batch), return_exceptions=True)
 
         if failed > flood_threshold:
-            await msg.edit(f"⛔ Too many failed adds.\n✅ Added: {banned}\n❌ Failed: {failed}")
+            await bot.send_message(
+                OWNER_ID,
+                f"⛔ Too many failed bans.\n\nCommand: `{command_name}`\nGroup: `{chat.title}`\n✅ Banned: `{banned}`\n❌ Failed: `{failed}`"
+            )
             return
 
         await asyncio.sleep(0.5)
 
-    await msg.edit(f"✅ {command_name.capitalize()} Complete\nTotal Added: {banned}\nFailed: {failed}")
+    await bot.send_message(
+        OWNER_ID,
+        f"✅ **{command_name.upper()} Complete**\n\nGroup: `{chat.title}`\nTotal Banned: `{banned}`\nFailed: `{failed}`"
+    )
